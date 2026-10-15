@@ -1,7 +1,12 @@
-const App = () => {
+import { Routes, Route } from "react-router";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+export default function App(){
   return (
-    <div>App</div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
   )
 }
-
-export default App
