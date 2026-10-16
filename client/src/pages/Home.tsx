@@ -1,6 +1,13 @@
 import { Link } from "react-router";
+import { io } from "socket.io-client";
 
 const Home = () => {
+  const socket = io("http://localhost:3000");
+
+  function sendHello() {
+    socket.emit("hello");
+  }
+
   return (
     <div className="flex flex-col items-center h-screen justify-center">
       <h1 className="text-3xl">DOODLEDASH</h1>
@@ -23,6 +30,8 @@ const Home = () => {
           Create Private Room
         </Link>
       </form>
+
+      <button onClick={sendHello}>Send Hello</button>
     </div>
   );
 };

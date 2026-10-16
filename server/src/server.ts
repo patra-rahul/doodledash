@@ -12,7 +12,9 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {
-  socket.emit;
+  socket.on("hello", () => {
+    console.log("Client sent hello");
+  });
 });
 
 httpServer.listen(3000);
